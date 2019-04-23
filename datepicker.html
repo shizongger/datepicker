@@ -5,15 +5,38 @@
     <link type="text/css" rel="stylesheet" href="css/datepicker.css" />
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <style>
+        .datepicker {
+            border: 1px solid #ccc;
+            width: 240px;
+            height: 25px;
+            border-radius: 4px;
+            padding: 5px;
+            line-height: 24px;
+        }
+        .datepicker:focus {
+            outline: 0 none;
+            border: 1px solid #1abc9c;
+        }
+    </style>
 </head>
 <body>
-<div class="ui-datepicker-wrapper">
+    <p>测试1</p>
+    <p>测试2</p>
+    <p>测试3</p>
+    <p>测试4</p>
+    <p>测试5</p>
+    <input type="text" class="datepicker">
+    <!--<p>测试1</p>-->
+    <!--<p>测试2</p>-->
+    <!--<p>测试3</p>-->
+    <!--<p>测试4</p>-->
+    <!--<p>测试5</p>-->
 </div>
 </body>
 <script>
     // var monthData = datepicker.getMonthData(2019, 3);
     // console.log(monthData);
-    datepicker.init(document.querySelector(".ui-datepicker-wrapper"));
-    // console.log(datepicker.getMonthData(2019, 3));
+    datepicker.init(document.querySelector(".datepicker"));
 </script>
 </html>

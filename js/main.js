@@ -32,8 +32,29 @@
         return html;
     }
 
-    datepicker.init = function($dom) {
+    datepicker.init = function($input) {
         var html = datepicker.buildUI(2019, 3);
-        $dom.innerHTML = html;
+        var $wrapper = document.createElement("div");
+        $wrapper.classList.add("ui-datepicker-wrapper");
+        $wrapper.innerHTML = html;
+        document.body.appendChild($wrapper);
+
+        var isOpen = false;
+        $input.addEventListener("click", function() {
+            if (isOpen) {
+                $wrapper.classList.remove("ui-datepicker-wrapper-show");
+            } else {
+                //获取input的位置和高度
+                var inputLeft = $input.offsetLeft;
+                var inputTop = $input.offsetTop;
+                var inputHeght = $input.offsetHeight;
+
+                $wrapper.style.left = inputLeft;
+                $wrapper.style.top = inputTop + inputHeght + 2 + "px";
+                $wrapper.classList.add("ui-datepicker-wrapper-show");
+            }
+            isOpen = !isOpen;
+        }, false);
+
     }
 })();
