@@ -1,6 +1,6 @@
 /**
  *
- * 获取某一月份的全部日期和对应的天数核心算法
+ * 获取某一月份的全部天数核心算法
  *
  * @author 张翠山
  */
@@ -57,7 +57,12 @@
                 showDate:showDate
             });
         }
-        return ret;
+        var returnObj = {
+            year : year,
+            month : month,
+            montData : ret
+        };
+        return returnObj;
     }
 
     window.datepicker = datepicker;
