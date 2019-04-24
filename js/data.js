@@ -20,6 +20,14 @@
             year = today.getFullYear();
             month = today.getMonth()+1;
         }
+        if(month > 12) {
+            year ++;
+            month = 1;
+        }
+        if(month < 1) {
+            year --;
+            month = 12;
+        }
 
         //1.计算该月第一天属于星期几，也就是1号属于星期几
         var firstDay = new Date(year, month-1, 1); //new出一个传来的年月的第一天
